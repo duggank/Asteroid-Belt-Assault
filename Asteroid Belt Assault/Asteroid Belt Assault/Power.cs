@@ -11,19 +11,28 @@ namespace Asteroid_Belt_Assault
     {
         
         public Sprite PowSprite;
-        private Vector2 currentWaypoint = Vector2.Zero;
         private float speed = 20f;
         public bool IsOn;
-        private int powRadius = 15;
+        private int powerRadius = 20;
         private float PowTimer = 0.0f;
         private float PowTMax = 8.5f;
         private Vector2 previousLocation = Vector2.Zero;
 
-        public Power(Texture2D texture, Vector2 location, Rectangle initialFrame, int frameCount)
+        public Power(Vector2 location, Texture2D texture, Rectangle initialFrame, Vector2 velocity)
         {
             PowSprite = new Sprite(location, texture, initialFrame, Vector2.Zero);
             
-            PowSprite.CollisionRadius = powRadius;
+            PowSprite.CollisionRadius = powerRadius;
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            PowSprite.Update(gameTime);
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            PowSprite.Draw(spriteBatch);
         }
          
             

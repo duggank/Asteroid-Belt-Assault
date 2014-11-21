@@ -23,12 +23,18 @@ namespace Asteroid_Belt_Assault
         GameStates gameState = GameStates.TitleScreen;
         Texture2D titleScreen;
         Texture2D spriteSheet;
+        Texture2D Shooty;
+        Texture2D Speedy;
+        Texture2D Shield;
 
         StarField starField;
         AsteroidManager asteroidManager;
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
+        PowerUPManger PowerShield;
+        PowerUPManger PowerShooty;
+        PowerUPManger PowerSpeedy;
 
         CollisionManager collisionManager;
 
@@ -75,6 +81,9 @@ namespace Asteroid_Belt_Assault
 
             titleScreen = Content.Load<Texture2D>(@"Textures\TitleScreen");
             spriteSheet = Content.Load<Texture2D>(@"Textures\spriteSheet");
+            Shooty = Content.Load<Texture2D>(@"Textures\Shooty");
+            Shield = Content.Load<Texture2D>(@"Textures\Shield");
+            Speedy = Content.Load<Texture2D>(@"Textures\Speedy");
 
             starField = new StarField(
                 this.Window.ClientBounds.Width,
@@ -83,6 +92,9 @@ namespace Asteroid_Belt_Assault
                 new Vector2(0, 30f),
                 spriteSheet,
                 new Rectangle(0, 450, 2, 2));
+
+            PowerShield = new PowerUPManger(new Vector2(200, -20), Shield, new Rectangle(0, 0, 200, 191), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height));
+
 
             asteroidManager = new AsteroidManager(
                 10,
@@ -123,7 +135,10 @@ namespace Asteroid_Belt_Assault
                 asteroidManager,
                 playerManager,
                 enemyManager,
-                explosionManager);
+                explosionManager,
+                PowerShield,
+                PowerSpeedy,
+                PowerShooty);
 
             SoundManager.Initialize(Content);
 
