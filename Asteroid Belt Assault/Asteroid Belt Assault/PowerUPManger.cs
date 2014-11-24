@@ -17,19 +17,20 @@ namespace Asteroid_Belt_Assault
          protected Vector2 location = Vector2.Zero;
          protected Vector2 velocity = Vector2.Zero;
          public ShotManager PowShotManager;
-         public PlayerManager playManager;
+         public PlayerManager playerManager;
 
          private Rectangle screenBounds;
 
          private Random rand = new Random((int)DateTime.UtcNow.Ticks);
 
-             public PowerUPManger(Vector2 location, Texture2D texture, Rectangle initialFrame, Vector2 velocity, ref Rectangle screenBounds)
+             public PowerUPManger(Vector2 location, Texture2D texture, Rectangle initialFrame, Vector2 velocity, Rectangle screenBounds, PlayerManager playerManager)
              {
                  this.texture = texture;
                  this.initialFrame = initialFrame;
                  this.location = location;
                  this.velocity = velocity;
                  this.screenBounds = screenBounds;
+                 this.playerManager = playerManager;
 
                  PowShotManager = new ShotManager(texture, new Rectangle(0, 300, 5, 5), 4, 2, 150f, screenBounds);
              }
@@ -53,7 +54,7 @@ namespace Asteroid_Belt_Assault
         
              public void Update(GameTime gameTime)
              {
-                if(playManager.PlayerScore == 500)
+                if(playerManager.PlayerScore == 500)
                   {
                       int selection = rand.Next(1, 3);
                       switch (selection)
@@ -64,7 +65,7 @@ namespace Asteroid_Belt_Assault
                           case 2: SpawnShield();
                                break;
 
-                          case 3: SpawnShield();
+                          case 3: SpawnShooty();
                                break;
                        }
                   } 
