@@ -16,7 +16,6 @@ namespace Asteroid_Belt_Assault
          public List<Power> Shooty = new List<Power>();
          protected Vector2 location = Vector2.Zero;
          protected Vector2 velocity = Vector2.Zero;
-         public ShotManager PowShotManager;
          public PlayerManager playerManager;
 
          private Rectangle screenBounds;
@@ -31,8 +30,6 @@ namespace Asteroid_Belt_Assault
                  this.velocity = velocity;
                  this.screenBounds = screenBounds;
                  this.playerManager = playerManager;
-
-                 PowShotManager = new ShotManager(texture, new Rectangle(0, 300, 5, 5), 4, 2, 150f, screenBounds);
              }
 
              public void SpawnSpeedy()
@@ -54,7 +51,7 @@ namespace Asteroid_Belt_Assault
         
              public void Update(GameTime gameTime)
              {
-                if(playerManager.PlayerScore == 500)
+                 if (playerManager.PlayerScore == 500 || playerManager.PlayerScore == 1000)
                   {
                       int selection = rand.Next(1, 3);
                       switch (selection)
@@ -73,7 +70,6 @@ namespace Asteroid_Belt_Assault
 
              public void Draw(SpriteBatch spriteBatch)
              {
-                 PowShotManager.Draw(spriteBatch);
 
                  foreach (Power Fast in Speedy)
                  {
