@@ -32,9 +32,8 @@ namespace Asteroid_Belt_Assault
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
-        PowerUPManger PowerShield;
-        PowerUPManger PowerShooty;
-        PowerUPManger PowerSpeedy;
+        PowerUPManger PowerManager;
+
 
         CollisionManager collisionManager;
 
@@ -135,13 +134,9 @@ namespace Asteroid_Belt_Assault
                 playerManager,
                 enemyManager,
                 explosionManager,
-                PowerShield,
-                PowerSpeedy,
-                PowerShooty);
+                PowerManager);
 
-            PowerShield = new PowerUPManger(new Vector2(200, -20), Shield, new Rectangle(0, 0, 200, 191), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height), playerManager);
-            PowerShooty = new PowerUPManger(new Vector2(200, -20), Shooty, new Rectangle(262, 164, 135, 140), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height), playerManager);
-            PowerSpeedy = new PowerUPManger(new Vector2(200, -20), Speedy, new Rectangle(107, 50, 103, 197), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height), playerManager);
+            PowerManager = new PowerUPManger(new Vector2(200, 10), Speedy, Shield, Shooty, new Rectangle(0, 0, 200, 191), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height), playerManager);
 
 
             SoundManager.Initialize(Content);
@@ -173,9 +168,8 @@ namespace Asteroid_Belt_Assault
             playerManager.PlayerShotManager.Shots.Clear();
             enemyManager.EnemyShotManager.Shots.Clear();
             playerManager.Destroyed = false;
-            PowerSpeedy.Speedy.Clear();
-            PowerShield.Shield.Clear();
-            PowerShooty.Shooty.Clear();
+            PowerManager.Clear();
+
         }
         
         /// <summary>
@@ -221,9 +215,11 @@ namespace Asteroid_Belt_Assault
                     enemyManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     collisionManager.CheckCollisions();
-                    PowerShield.Update(gameTime);
-                    PowerShooty.Update(gameTime);
-                    PowerSpeedy.Update(gameTime);
+                    if (playerManager.PlayerScore == 500 || playerManager.PlayerScore == 1000)
+                    {
+                        PowerManager.Update(gameTime);
+                    }
+                    
 
                     if (playerManager.Destroyed)
                     {
@@ -305,6 +301,7 @@ namespace Asteroid_Belt_Assault
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);
+                PowerManager.Draw(spriteBatch);
 
                 spriteBatch.DrawString(
                     pericles14,

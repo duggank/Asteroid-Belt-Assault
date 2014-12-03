@@ -12,9 +12,7 @@ namespace Asteroid_Belt_Assault
         private PlayerManager playerManager;
         private EnemyManager enemyManager;
         private ExplosionManager explosionManager;
-        private PowerUPManger Power1;
-        private PowerUPManger Power2;
-        private PowerUPManger Power3;
+        private PowerUPManger PowerManager;
         private Vector2 offScreen = new Vector2(-500, -500);
         private Vector2 shotToAsteroidImpact = new Vector2(0, -20);
         private int enemyPointValue = 100;
@@ -24,14 +22,13 @@ namespace Asteroid_Belt_Assault
             PlayerManager playerManager,
             EnemyManager enemyManager,
             ExplosionManager explosionManager,
-            PowerUPManger Power1,
-            PowerUPManger Power2,
-            PowerUPManger Power3)
+            PowerUPManger PowerManager)
         {
             this.asteroidManager = asteroidManager;
             this.playerManager = playerManager;
             this.enemyManager = enemyManager;
             this.explosionManager = explosionManager;
+            this.PowerManager = PowerManager;
         }
 
         private void checkShotToEnemyCollisions()
@@ -52,6 +49,26 @@ namespace Asteroid_Belt_Assault
                             enemy.EnemySprite.Velocity / 10);
                     }
 
+                }
+            }
+        }
+
+        private void checkShotToPowerCollisions()
+        {
+            foreach (Sprite shot in playerManager.PlayerShotManager.Shots)
+            {
+                foreach (Power Fast in PowerManager.Speedy)
+                {
+                    if (shot.IsCircleColliding(
+                        Fast.PowSprite.Center,
+                        Fast.PowSprite.CollisionRadius))
+                    {
+                        shot.Location = offScreen;
+                        Fast.isDestroyed = true;
+                        explosionManager.AddExplosion(
+                            Fast.PowSprite.Center,
+                            Fast.PowSprite.Velocity / 10);
+                    }
                 }
             }
         }

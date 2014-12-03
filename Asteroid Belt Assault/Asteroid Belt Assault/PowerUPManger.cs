@@ -9,7 +9,9 @@ namespace Asteroid_Belt_Assault
 {
     class PowerUPManger
     {
-         private Texture2D texture;
+         private Texture2D textureShield;
+         private Texture2D textureSpeedy;
+         private Texture2D textureShooty;
          private Rectangle initialFrame;
          public List<Power> Speedy = new List<Power>();
          public List<Power> Shield = new List<Power>();
@@ -20,11 +22,15 @@ namespace Asteroid_Belt_Assault
 
          private Rectangle screenBounds;
 
+         private int level = 0;
+
          private Random rand = new Random((int)DateTime.UtcNow.Ticks);
 
-             public PowerUPManger(Vector2 location, Texture2D texture, Rectangle initialFrame, Vector2 velocity, Rectangle screenBounds, PlayerManager playerManager)
+             public PowerUPManger(Vector2 location, Texture2D textureSpeedy, Texture2D textureShield, Texture2D textureShooty, Rectangle initialFrame, Vector2 velocity, Rectangle screenBounds, PlayerManager playerManager)
              {
-                 this.texture = texture;
+                 this.textureShooty = textureShooty;
+                 this.textureSpeedy = textureSpeedy;
+                 this.textureShield = textureShield;
                  this.initialFrame = initialFrame;
                  this.location = location;
                  this.velocity = velocity;
@@ -34,37 +40,50 @@ namespace Asteroid_Belt_Assault
 
              public void SpawnSpeedy()
              {
-                 Power Fast = new Power(location, texture, new Rectangle(106, 51, 107, 196), new Vector2(0, 30));
+                 Power Fast = new Power(location, textureSpeedy, new Rectangle(106, 51, 107, 196), new Vector2(0, 30));
                  Speedy.Add(Fast);
              }
              public void SpawnShield()
              {
-                 Power Protect = new Power(location, texture, new Rectangle(0, 0, 200, 191), new Vector2(0, 30));
+                 Power Protect = new Power(location, textureShield, new Rectangle(0, 0, 200, 191), new Vector2(0, 30));
                  Shield.Add(Protect);
              }
              public void SpawnShooty()
              {
-                 Power Shoot = new Power(location, texture, new Rectangle(262, 163, 136, 141), new Vector2(0, 30));
+                 Power Shoot = new Power(location, textureShooty, new Rectangle(262, 163, 136, 141), new Vector2(0, 30));
                  Shooty.Add(Shoot);
+             }
+
+
+             public void Clear()
+             {
+                 Shield.Clear();
+                 Shooty.Clear();
+                 Speedy.Clear();
              }
 
         
              public void Update(GameTime gameTime)
              {
-                 if (playerManager.PlayerScore == 500 || playerManager.PlayerScore == 1000)
+                 if ((playerManager.PlayerScore == 500 && level == 0)  ||
+                     (playerManager.PlayerScore == 1000 && level == 1)
+                     )
                   {
-                      int selection = rand.Next(1, 3);
-                      switch (selection)
-                       {
-                          case 1: SpawnSpeedy();
-                               break;
+                    int selection = rand.Next(1, 4);
+                    level++;
 
-                          case 2: SpawnShield();
-                               break;
+                    switch (selection)
+                    {
+                        case 1: SpawnSpeedy();
+                            break;
 
-                          case 3: SpawnShooty();
-                               break;
-                       }
+                        case 2: SpawnShield();
+                            break;
+
+                        case 3: SpawnShooty();
+                            break;
+                    }
+                      
                   } 
              }
 
