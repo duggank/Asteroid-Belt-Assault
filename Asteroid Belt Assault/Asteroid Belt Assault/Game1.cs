@@ -186,6 +186,8 @@ namespace Asteroid_Belt_Assault
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
+            
+
             // TODO: Add your update logic here
 
             switch (gameState)

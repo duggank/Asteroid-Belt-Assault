@@ -61,10 +61,10 @@ namespace Asteroid_Belt_Assault
                 {
                     if (shot.IsCircleColliding(
                         Fast.PowSprite.Center,
-                        Fast.PowSprite.CollisionRadius))
+                        Fast.PowSprite.CollisionRadius) && Fast.Activated)
                     {
                         shot.Location = offScreen;
-                        Fast.isDestroyed = true;
+                        Fast.Destroy();
                         explosionManager.AddExplosion(
                             Fast.PowSprite.Center,
                             Fast.PowSprite.Velocity / 10);
@@ -74,10 +74,10 @@ namespace Asteroid_Belt_Assault
                 {
                     if (shot.IsCircleColliding(
                         Protect.PowSprite.Center,
-                        Protect.PowSprite.CollisionRadius))
+                        Protect.PowSprite.CollisionRadius) && Protect.Activated)
                     {
                         shot.Location = offScreen;
-                        Protect.isDestroyed = true;
+                        Protect.Destroy();
                         explosionManager.AddExplosion(
                             Protect.PowSprite.Center,
                             Protect.PowSprite.Velocity / 10);
@@ -87,10 +87,10 @@ namespace Asteroid_Belt_Assault
                 {
                     if (shot.IsCircleColliding(
                         Shoot.PowSprite.Center,
-                        Shoot.PowSprite.CollisionRadius))
+                        Shoot.PowSprite.CollisionRadius) && Shoot.Activated)
                     {
                         shot.Location = offScreen;
-                        Shoot.isDestroyed = true;
+                        Shoot.Destroy();
                         explosionManager.AddExplosion(
                             Shoot.PowSprite.Center,
                             Shoot.PowSprite.Velocity / 10);

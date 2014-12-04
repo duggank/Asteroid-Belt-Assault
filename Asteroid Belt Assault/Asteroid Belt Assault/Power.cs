@@ -12,8 +12,9 @@ namespace Asteroid_Belt_Assault
         
         public Sprite PowSprite;
         private int powerRadius = 36;
-        public bool isDestroyed = false;
+        private bool isDestroyed = false;
         private Vector2 previousLocation = Vector2.Zero;
+        private PlayerManager PlayManger;
 
         public Power(Vector2 location, Texture2D texture, Rectangle initialFrame, Vector2 velocity)
         {
@@ -22,14 +23,39 @@ namespace Asteroid_Belt_Assault
             PowSprite.CollisionRadius = powerRadius;
         }
 
+        public bool Activated
+        {
+            get {
+                return !isDestroyed;
+            }
+
+        }
+
+        public void Destroy()
+        {
+            isDestroyed = true;
+        }
+
+        public void SpeedUp()
+        {
+            PlayManger.playerSpeed = 240.0f;
+        }
+
         public void Update(GameTime gameTime)
         {
-            PowSprite.Update(gameTime);
+            if (Activated)
+            {
+                PowSprite.Update(gameTime);
+            }
+            
         }
+
+        
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            PowSprite.Draw(spriteBatch);
+            if(Activated)
+                PowSprite.Draw(spriteBatch);
         }
          
             
