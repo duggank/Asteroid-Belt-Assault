@@ -18,6 +18,7 @@ namespace Asteroid_Belt_Assault
          public List<Power> Shooty = new List<Power>();
          protected Vector2 location = Vector2.Zero;
          protected Vector2 velocity = Vector2.Zero;
+         private Power power;
          public PlayerManager playerManager;
 
          private Rectangle screenBounds;
@@ -40,17 +41,17 @@ namespace Asteroid_Belt_Assault
 
              public void SpawnSpeedy()
              {
-                 Power Fast = new Power(location, textureSpeedy, new Rectangle(106, 51, 107, 196), new Vector2(0, 30));
+                 Power Fast = new Power(location, textureSpeedy, new Rectangle(37, 63, 31, 69), new Vector2(0, 30));
                  Speedy.Add(Fast);
              }
              public void SpawnShield()
              {
-                 Power Protect = new Power(location, textureShield, new Rectangle(0, 0, 200, 191), new Vector2(0, 30));
+                 Power Protect = new Power(location, textureShield, new Rectangle(102, 142, 38, 38), new Vector2(0, 30));
                  Shield.Add(Protect);
              }
              public void SpawnShooty()
              {
-                 Power Shoot = new Power(location, textureShooty, new Rectangle(262, 163, 136, 141), new Vector2(0, 30));
+                 Power Shoot = new Power(location, textureShooty, new Rectangle(97, 134, 48, 52), new Vector2(0, 30));
                  Shooty.Add(Shoot);
              }
 
@@ -84,7 +85,8 @@ namespace Asteroid_Belt_Assault
                             break;
                     }
                       
-                  } 
+                  }
+                 
              }
 
              public void Draw(SpriteBatch spriteBatch)

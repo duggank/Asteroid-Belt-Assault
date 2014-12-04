@@ -11,7 +11,7 @@ namespace Asteroid_Belt_Assault
     {
         
         public Sprite PowSprite;
-        private int powerRadius = 160;
+        private int powerRadius = 36;
         public bool isDestroyed = false;
         private Vector2 previousLocation = Vector2.Zero;
 

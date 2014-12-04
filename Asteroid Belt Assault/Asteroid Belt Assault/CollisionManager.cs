@@ -70,6 +70,32 @@ namespace Asteroid_Belt_Assault
                             Fast.PowSprite.Velocity / 10);
                     }
                 }
+                foreach (Power Protect in PowerManager.Shield)
+                {
+                    if (shot.IsCircleColliding(
+                        Protect.PowSprite.Center,
+                        Protect.PowSprite.CollisionRadius))
+                    {
+                        shot.Location = offScreen;
+                        Protect.isDestroyed = true;
+                        explosionManager.AddExplosion(
+                            Protect.PowSprite.Center,
+                            Protect.PowSprite.Velocity / 10);
+                    }
+                }
+                foreach (Power Shoot in PowerManager.Shooty)
+                {
+                    if (shot.IsCircleColliding(
+                        Shoot.PowSprite.Center,
+                        Shoot.PowSprite.CollisionRadius))
+                    {
+                        shot.Location = offScreen;
+                        Shoot.isDestroyed = true;
+                        explosionManager.AddExplosion(
+                            Shoot.PowSprite.Center,
+                            Shoot.PowSprite.Velocity / 10);
+                    }
+                }
             }
         }
 
@@ -158,6 +184,7 @@ namespace Asteroid_Belt_Assault
             if (!playerManager.Destroyed)
             {
                 checkShotToPlayerCollisions();
+                checkShotToPowerCollisions();
                 checkEnemyToPlayerCollisions();
                 checkAsteroidToPlayerCollisions();
             }

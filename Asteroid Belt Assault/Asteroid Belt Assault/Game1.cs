@@ -129,6 +129,8 @@ namespace Asteroid_Belt_Assault
                 3,
                 new Rectangle(0, 450, 2, 2));
 
+            PowerManager = new PowerUPManger(new Vector2(200, 10), Speedy, Shield, Shooty, new Rectangle(0, 0, 200, 191), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height), playerManager);
+
             collisionManager = new CollisionManager(
                 asteroidManager,
                 playerManager,
@@ -136,8 +138,7 @@ namespace Asteroid_Belt_Assault
                 explosionManager,
                 PowerManager);
 
-            PowerManager = new PowerUPManger(new Vector2(200, 10), Speedy, Shield, Shooty, new Rectangle(0, 0, 200, 191), Vector2.Zero, new Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height), playerManager);
-
+            
 
             SoundManager.Initialize(Content);
 
