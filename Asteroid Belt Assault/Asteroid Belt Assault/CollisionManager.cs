@@ -13,6 +13,7 @@ namespace Asteroid_Belt_Assault
         private EnemyManager enemyManager;
         private ExplosionManager explosionManager;
         private PowerUPManger PowerManager;
+        private Power power;
         private Vector2 offScreen = new Vector2(-500, -500);
         private Vector2 shotToAsteroidImpact = new Vector2(0, -20);
         private int enemyPointValue = 100;
@@ -65,6 +66,7 @@ namespace Asteroid_Belt_Assault
                     {
                         shot.Location = offScreen;
                         Fast.Destroy();
+                        playerManager.playerSpeed = 240.0f;
                         explosionManager.AddExplosion(
                             Fast.PowSprite.Center,
                             Fast.PowSprite.Velocity / 10);
