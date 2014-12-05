@@ -20,6 +20,7 @@ namespace Asteroid_Belt_Assault
          protected Vector2 velocity = Vector2.Zero;
          public Power power;
          public PlayerManager playerManager;
+         
 
          private Rectangle screenBounds;
 
@@ -39,19 +40,27 @@ namespace Asteroid_Belt_Assault
                  this.playerManager = playerManager;
              }
 
+             public void FinishSpeed()
+             {
+                 // Do something here
+                 throw new Exception("Finish speed!");
+             }
+
              public void SpawnSpeedy()
              {
-                 Power Fast = new Power(location, textureSpeedy, new Rectangle(37, 63, 31, 69), new Vector2(0, 30));
+                 Power Fast = new Power(location, textureSpeedy, new Rectangle(37, 63, 31, 69), new Vector2(0, 30), 5);
+                 //Fast.OnFinish += FinishSpeed();
+
                  Speedy.Add(Fast);
              }
              public void SpawnShield()
              {
-                 Power Protect = new Power(location, textureShield, new Rectangle(102, 142, 38, 38), new Vector2(0, 30));
+                 Power Protect = new Power(location, textureShield, new Rectangle(102, 142, 38, 38), new Vector2(0, 30), 5);
                  Shield.Add(Protect);
              }
              public void SpawnShooty()
              {
-                 Power Shoot = new Power(location, textureShooty, new Rectangle(97, 134, 48, 52), new Vector2(0, 30));
+                 Power Shoot = new Power(location, textureShooty, new Rectangle(97, 134, 48, 52), new Vector2(0, 30), 5);
                  Shooty.Add(Shoot);
              }
 
@@ -66,9 +75,12 @@ namespace Asteroid_Belt_Assault
         
              public void Update(GameTime gameTime)
              {
-                     if ((playerManager.PlayerScore == 500 && level == 0) ||
-                         (playerManager.PlayerScore == 1000 && level == 1) ||
-                         (playerManager.PlayerScore == 2000 && level == 2) 
+
+                      if ((playerManager.PlayerScore == 100 && level == 0) ||
+                         (playerManager.PlayerScore == 200 && level == 1) ||
+                         (playerManager.PlayerScore == 300 && level == 2) ||
+                         (playerManager.PlayerScore == 400 && level == 3) ||
+                         (playerManager.PlayerScore == 500 && level == 4)
                          )
                      {
                          int selection = rand.Next(1, 4);

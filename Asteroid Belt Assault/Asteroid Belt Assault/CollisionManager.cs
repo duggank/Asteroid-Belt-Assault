@@ -13,24 +13,30 @@ namespace Asteroid_Belt_Assault
         private EnemyManager enemyManager;
         private ExplosionManager explosionManager;
         private PowerUPManger PowerManager;
-        private Power power;
+        public Power power;
         private Vector2 offScreen = new Vector2(-500, -500);
         private Vector2 shotToAsteroidImpact = new Vector2(0, -20);
         private int enemyPointValue = 100;
+        public bool Invincible;
 
         public CollisionManager(
             AsteroidManager asteroidManager,
             PlayerManager playerManager,
             EnemyManager enemyManager,
             ExplosionManager explosionManager,
-            PowerUPManger PowerManager)
+            PowerUPManger PowerManager,
+            Power power)
         {
+            this.power = power;
             this.asteroidManager = asteroidManager;
             this.playerManager = playerManager;
             this.enemyManager = enemyManager;
             this.explosionManager = explosionManager;
             this.PowerManager = PowerManager;
+
         }
+
+
 
         private void checkShotToEnemyCollisions()
         {
@@ -66,7 +72,8 @@ namespace Asteroid_Belt_Assault
                     {
                         shot.Location = offScreen;
                         Fast.Destroy();
-                        playerManager.playerSpeed = 240.0f;
+                        playerManager.playerSpeed += 240.0f;
+
                         explosionManager.AddExplosion(
                             Fast.PowSprite.Center,
                             Fast.PowSprite.Velocity / 10);
@@ -80,6 +87,8 @@ namespace Asteroid_Belt_Assault
                     {
                         shot.Location = offScreen;
                         Protect.Destroy();
+                        Invincible = true;
+                        
                         explosionManager.AddExplosion(
                             Protect.PowSprite.Center,
                             Protect.PowSprite.Velocity / 10);
@@ -92,6 +101,8 @@ namespace Asteroid_Belt_Assault
                         Shoot.PowSprite.CollisionRadius) && Shoot.Activated)
                     {
                         shot.Location = offScreen;
+                        playerManager.minShotTimer = 0.0f;
+                        
                         Shoot.Destroy();
                         explosionManager.AddExplosion(
                             Shoot.PowSprite.Center,
@@ -127,10 +138,14 @@ namespace Asteroid_Belt_Assault
                     playerManager.playerSprite.CollisionRadius))
                 {
                     shot.Location = offScreen;
-                    playerManager.Destroyed = true;
-                    explosionManager.AddExplosion(
-                        playerManager.playerSprite.Center,
-                        Vector2.Zero);
+                    if (!Invincible)
+                    {
+                        playerManager.Destroyed = true;
+
+                        explosionManager.AddExplosion(
+                            playerManager.playerSprite.Center,
+                            Vector2.Zero);
+                    }
                 }
             }
         }
@@ -147,12 +162,14 @@ namespace Asteroid_Belt_Assault
                     explosionManager.AddExplosion(
                         enemy.EnemySprite.Center,
                         enemy.EnemySprite.Velocity / 10);
+                    if (!Invincible)
+                    {
+                        playerManager.Destroyed = true;
 
-                    playerManager.Destroyed = true;
-
-                    explosionManager.AddExplosion(
-                        playerManager.playerSprite.Center,
-                        Vector2.Zero);
+                        explosionManager.AddExplosion(
+                            playerManager.playerSprite.Center,
+                            Vector2.Zero);
+                    }
                 }
             }
         }
@@ -170,11 +187,13 @@ namespace Asteroid_Belt_Assault
                         asteroid.Velocity / 10);
 
                     asteroid.Location = offScreen;
-
-                    playerManager.Destroyed = true;
-                    explosionManager.AddExplosion(
-                        playerManager.playerSprite.Center,
-                        Vector2.Zero);
+                    if (!Invincible)
+                    {
+                        playerManager.Destroyed = true;
+                        explosionManager.AddExplosion(
+                            playerManager.playerSprite.Center,
+                            Vector2.Zero);
+                    }
                 }
             }
         }

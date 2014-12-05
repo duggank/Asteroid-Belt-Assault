@@ -33,6 +33,7 @@ namespace Asteroid_Belt_Assault
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
         PowerUPManger PowerManager;
+        Power power;
 
 
         CollisionManager collisionManager;
@@ -136,7 +137,8 @@ namespace Asteroid_Belt_Assault
                 playerManager,
                 enemyManager,
                 explosionManager,
-                PowerManager);
+                PowerManager,
+                power);
 
             
 
@@ -218,10 +220,7 @@ namespace Asteroid_Belt_Assault
                     enemyManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     collisionManager.CheckCollisions();
-                    if (playerManager.PlayerScore == 500 || playerManager.PlayerScore == 1000)
-                    {
-                        PowerManager.Update(gameTime);
-                    }
+                    PowerManager.Update(gameTime);
                     
 
                     if (playerManager.Destroyed)
