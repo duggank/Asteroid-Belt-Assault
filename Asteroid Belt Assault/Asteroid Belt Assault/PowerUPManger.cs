@@ -40,27 +40,63 @@ namespace Asteroid_Belt_Assault
                  this.playerManager = playerManager;
              }
 
+             public void StartSpeed()
+             {
+                 playerManager.playerSpeed += 240.0f;
+             }
+
              public void FinishSpeed()
              {
-                 // Do something here
-                 throw new Exception("Finish speed!");
+                 playerManager.playerSpeed -= 240.0f;
              }
+
+             public void StartShield()
+             {
+                 playerManager.Invincibility = true;
+             }
+
+             public void FinishShield()
+             {
+                 playerManager.Invincibility = false;
+             }
+
+             public void StartShooty()
+             {
+                 playerManager.minShotTimer -= 6;
+             }
+
+             public void FinishShooty()
+             {
+                 playerManager.minShotTimer += 6;
+             }
+
+
 
              public void SpawnSpeedy()
              {
-                 Power Fast = new Power(location, textureSpeedy, new Rectangle(37, 63, 31, 69), new Vector2(0, 30), 5);
-                 //Fast.OnFinish += FinishSpeed();
+                 Power Fast = new Power(location, textureSpeedy, new Rectangle(37, 63, 31, 69), new Vector2(0, 30), 10);
+
+                 Fast.OnStart = new Handler(this.StartSpeed); 
+                 Fast.OnFinish = new Handler(this.FinishSpeed);
 
                  Speedy.Add(Fast);
              }
              public void SpawnShield()
              {
-                 Power Protect = new Power(location, textureShield, new Rectangle(102, 142, 38, 38), new Vector2(0, 30), 5);
+                 Power Protect = new Power(location, textureShield, new Rectangle(102, 142, 38, 38), new Vector2(0, 30), 30);
+
+                 Protect.OnStart = new Handler(this.StartShield);
+                 Protect.OnFinish = new Handler(this.FinishShield);
+
                  Shield.Add(Protect);
              }
              public void SpawnShooty()
              {
-                 Power Shoot = new Power(location, textureShooty, new Rectangle(97, 134, 48, 52), new Vector2(0, 30), 5);
+                 Power Shoot = new Power(location, textureShooty, new Rectangle(97, 134, 48, 52), new Vector2(0, 30), 15);
+
+                 Shoot.OnStart = new Handler(this.StartShooty);
+                 Shoot.OnFinish = new Handler(this.FinishShooty);
+
                  Shooty.Add(Shoot);
              }
 
@@ -76,11 +112,11 @@ namespace Asteroid_Belt_Assault
              public void Update(GameTime gameTime)
              {
 
-                      if ((playerManager.PlayerScore == 100 && level == 0) ||
-                         (playerManager.PlayerScore == 200 && level == 1) ||
-                         (playerManager.PlayerScore == 300 && level == 2) ||
-                         (playerManager.PlayerScore == 400 && level == 3) ||
-                         (playerManager.PlayerScore == 500 && level == 4)
+                      if ((playerManager.PlayerScore == 300 && level == 0) ||
+                         (playerManager.PlayerScore == 600 && level == 1) ||
+                         (playerManager.PlayerScore == 1200 && level == 2) ||
+                         (playerManager.PlayerScore == 2400 && level == 3) ||
+                         (playerManager.PlayerScore == 4800 && level == 4)
                          )
                      {
                          int selection = rand.Next(1, 4);

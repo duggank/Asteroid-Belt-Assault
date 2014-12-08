@@ -23,6 +23,7 @@ namespace Asteroid_Belt_Assault
         public float minShotTimer = 0.52f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
+        public bool Invincibility = false;
 
         public PlayerManager(
             Texture2D texture,  

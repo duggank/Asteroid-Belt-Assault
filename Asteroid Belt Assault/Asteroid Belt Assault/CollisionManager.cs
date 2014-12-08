@@ -72,7 +72,8 @@ namespace Asteroid_Belt_Assault
                     {
                         shot.Location = offScreen;
                         Fast.Destroy();
-                        playerManager.playerSpeed += 240.0f;
+                        Fast.Start();
+                        
 
                         explosionManager.AddExplosion(
                             Fast.PowSprite.Center,
@@ -87,7 +88,8 @@ namespace Asteroid_Belt_Assault
                     {
                         shot.Location = offScreen;
                         Protect.Destroy();
-                        Invincible = true;
+                        Protect.Start();
+                        
                         
                         explosionManager.AddExplosion(
                             Protect.PowSprite.Center,
@@ -101,9 +103,10 @@ namespace Asteroid_Belt_Assault
                         Shoot.PowSprite.CollisionRadius) && Shoot.Activated)
                     {
                         shot.Location = offScreen;
-                        playerManager.minShotTimer = 0.0f;
                         
                         Shoot.Destroy();
+                        Shoot.Start();
+                        
                         explosionManager.AddExplosion(
                             Shoot.PowSprite.Center,
                             Shoot.PowSprite.Velocity / 10);
@@ -138,7 +141,7 @@ namespace Asteroid_Belt_Assault
                     playerManager.playerSprite.CollisionRadius))
                 {
                     shot.Location = offScreen;
-                    if (!Invincible)
+                    if (!playerManager.Invincibility)
                     {
                         playerManager.Destroyed = true;
 
@@ -162,7 +165,7 @@ namespace Asteroid_Belt_Assault
                     explosionManager.AddExplosion(
                         enemy.EnemySprite.Center,
                         enemy.EnemySprite.Velocity / 10);
-                    if (!Invincible)
+                    if (!playerManager.Invincibility)
                     {
                         playerManager.Destroyed = true;
 
@@ -187,7 +190,7 @@ namespace Asteroid_Belt_Assault
                         asteroid.Velocity / 10);
 
                     asteroid.Location = offScreen;
-                    if (!Invincible)
+                    if (!playerManager.Invincibility)
                     {
                         playerManager.Destroyed = true;
                         explosionManager.AddExplosion(

@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Asteroid_Belt_Assault
 {
-    public delegate void Finish();
+    public delegate void Handler();
 
     class Power
     {
@@ -15,11 +15,13 @@ namespace Asteroid_Belt_Assault
         public Sprite PowSprite;
         private int powerRadius = 36;
         private bool isDestroyed = false;
+        private bool isStarted = false;  // True if user gets the powerup
         private Vector2 previousLocation = Vector2.Zero;
         private PlayerManager PlayManger;
         public float Timer = 0.0f;
-        public float TimerMax = 5.0f * 1000f;
-        public Finish OnFinish;
+        public float TimerMax = 1.0f * 1000f;
+        public Handler OnFinish;
+        public Handler OnStart; 
        
 
         public Power(Vector2 location, Texture2D texture, Rectangle initialFrame, Vector2 velocity, float Timer)
@@ -38,14 +40,17 @@ namespace Asteroid_Belt_Assault
 
         }
 
+        public void Start()
+        {
+            if (OnStart != null)
+                OnStart();
+
+            this.isStarted = true;
+        }
+
         public void Destroy()
         {
             isDestroyed = true;
-
-            if (OnFinish != null)
-            {
-                OnFinish();
-            }
         }
 
         public void Update(GameTime gameTime)
@@ -53,12 +58,18 @@ namespace Asteroid_Belt_Assault
             if (Activated)
             {
                 PowSprite.Update(gameTime);
+            }
+
+
+            if (isStarted)
+            {
                 Timer += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
                 if (Timer > TimerMax)
-                    Destroy();
-            }
-                
+                {
+                    OnFinish();
+                }
+            }    
             
         }
 
