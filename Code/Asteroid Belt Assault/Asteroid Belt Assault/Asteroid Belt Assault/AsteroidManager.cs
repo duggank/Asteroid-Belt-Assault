@@ -20,6 +20,7 @@ namespace Asteroid_Belt_Assault
         public List<Sprite> Asteroids = new List<Sprite>();
         private int minSpeed = 60;
         private int maxSpeed = 120;
+        
 
         private Random rand = new Random();
 
@@ -97,6 +98,7 @@ namespace Asteroid_Belt_Assault
                 }
                 foreach (Sprite asteroid in Asteroids)
                 {
+                    
                     if (asteroid.IsBoxColliding(
                         new Rectangle(
                             (int)location.X,
@@ -113,6 +115,7 @@ namespace Asteroid_Belt_Assault
                     location = new Vector2(-500, -500);
                     locationOK = true;
                 }
+                
             } while (locationOK == false);
 
             return location;
