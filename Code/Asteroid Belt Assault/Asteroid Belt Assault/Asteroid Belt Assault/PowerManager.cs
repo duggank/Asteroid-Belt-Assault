@@ -32,6 +32,7 @@ namespace Asteroid_Belt_Assault
         private Random rand;
 
         public PowerManager(
+            Texture2D texture,
             AsteroidManager asteroidManager,
             PlayerManager playerManager,
             EnemyManager enemyManager,
@@ -43,6 +44,8 @@ namespace Asteroid_Belt_Assault
             this.enemyManager = enemyManager;
             this.explosionManager = explosionManager;
             this.shotManager = shotManager;
+            this.texture = texture;
+
         }
 
         
