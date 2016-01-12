@@ -32,8 +32,8 @@ namespace Asteroid_Belt_Assault
         PlayerManager playerManager;
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
-        PowerManager jaelpowerup;
         ShotManager shotmanager;
+        PowerManager powerManager;
 
         CollisionManager collisionManager;
 
@@ -145,6 +145,7 @@ namespace Asteroid_Belt_Assault
                 new Rectangle(0, 450, 2, 2));
 
             collisionManager = new CollisionManager(
+                powerManager,
                 asteroidManager,
                 playerManager,
                 enemyManager,

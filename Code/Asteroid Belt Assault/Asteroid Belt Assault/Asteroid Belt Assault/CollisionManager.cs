@@ -57,17 +57,17 @@ namespace Asteroid_Belt_Assault
         {
             foreach (Sprite shot in playerManager.PlayerShotManager.Shots)
             {
-                foreach (Sprite powerUp in powerManager.Powers)
+                foreach (PowerUp powerUp in powerManager.Powers)
                 {
                     if (shot.IsCircleColliding(
-                        powerUp.Center,
-                        powerUp.CollisionRadius))
+                        powerUp.PowerSprite.Center,
+                        powerUp.PowerSprite.CollisionRadius))
                     {
                         shot.Location = offScreen;
                         powerManager.consumed = true;
                         explosionManager.AddExplosion(
-                            powerUp.Center,
-                            powerUp.Velocity / 10);
+                            powerUp.PowerSprite.Center,
+                            powerUp.PowerSprite.Velocity / 10);
                     }
                 }
             }

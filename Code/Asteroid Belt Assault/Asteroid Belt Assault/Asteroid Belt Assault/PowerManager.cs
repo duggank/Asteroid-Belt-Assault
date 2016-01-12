@@ -57,7 +57,7 @@ namespace Asteroid_Belt_Assault
                 new Vector2(rand.Next(10, 700), 10),
                 frame,
                 0);
-            newPower.powerupRadius = 30;
+            newPower.PowerSprite.CollisionRadius = 30;
             Powers.Add(newPower);
         }
 
