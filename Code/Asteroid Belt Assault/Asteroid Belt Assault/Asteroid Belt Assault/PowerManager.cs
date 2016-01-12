@@ -12,11 +12,12 @@ namespace Asteroid_Belt_Assault
         private int screenWidth = 800;
         private int screenHeight = 600;
         private int screenPadding = 10;
+        public bool consumed = true;
 
         private Texture2D texture;
         private Rectangle frame;
 
-        public List<Sprite> Powers = new List<Sprite>();
+        public List<PowerUp> Powers = new List<PowerUp>();
         private int Speed = 40;
 
 
@@ -51,22 +52,23 @@ namespace Asteroid_Belt_Assault
         
         public void AddPower()
         {
-            Sprite newPower = new Sprite(
-                new Vector2(rand.Next(10, 700), 0),
+            PowerUp newPower = new PowerUp(
                 texture,
+                new Vector2(rand.Next(10, 700), 10),
                 frame,
-                Vector2.Zero);
-            newPower.CollisionRadius = 30;
+                0);
+            newPower.powerupRadius = 30;
             Powers.Add(newPower);
         }
 
         private void GivePower()
         {
-            Selection = rand.Next(0, 4);
+            if(texture.Name == @"Textures\\jaelpowerup.png")
+                Selection = 1;
 
             if (Selection == 1) //Super fast fire rate.
             {
-                shotManager.shotSpeed += (.15f * shotManager.shotSpeed);
+                shotManager.shotSpeed += (.79f * shotManager.shotSpeed);
                 
             }
         }
@@ -76,7 +78,11 @@ namespace Asteroid_Belt_Assault
             if (!playerManager.Destroyed)
             {
                 AddPower();
-                GivePower();
+                if (consumed == true)
+                {
+                    GivePower();
+                    consumed = false;
+                }
             }
         }
 

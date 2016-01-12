@@ -89,7 +89,7 @@ namespace Asteroid_Belt_Assault
                 this.Window.ClientBounds.Width,
                 this.Window.ClientBounds.Height,
                 200,
-                new Vector2(0, 150f),
+                new Vector2(0, 70f),
                 spriteSheet,
                 new Rectangle(0, 450, 2, 2));
 
@@ -105,7 +105,7 @@ namespace Asteroid_Belt_Assault
                 this.Window.ClientBounds.Width,
                 this.Window.ClientBounds.Height,
                 200,
-                new Vector2(0, 200f),
+                new Vector2(0, 180f),
                 spriteSheet,
                 new Rectangle(0, 450, 2, 2));
 

@@ -8,6 +8,7 @@ namespace Asteroid_Belt_Assault
 {
     class CollisionManager
     {
+        private PowerManager powerManager;
         private AsteroidManager asteroidManager;
         private PlayerManager playerManager;
         private EnemyManager enemyManager;
@@ -17,11 +18,13 @@ namespace Asteroid_Belt_Assault
         private int enemyPointValue = 100;
 
         public CollisionManager(
+            PowerManager powerManager,
             AsteroidManager asteroidManager,
             PlayerManager playerManager,
             EnemyManager enemyManager,
             ExplosionManager explosionManager)
         {
+            this.powerManager = powerManager;
             this.asteroidManager = asteroidManager;
             this.playerManager = playerManager;
             this.enemyManager = enemyManager;
@@ -49,6 +52,27 @@ namespace Asteroid_Belt_Assault
                 }
             }
         }
+
+        private void checkShotToPowerUpCollisions()
+        {
+            foreach (Sprite shot in playerManager.PlayerShotManager.Shots)
+            {
+                foreach (Sprite powerUp in powerManager.Powers)
+                {
+                    if (shot.IsCircleColliding(
+                        powerUp.Center,
+                        powerUp.CollisionRadius))
+                    {
+                        shot.Location = offScreen;
+                        powerManager.consumed = true;
+                        explosionManager.AddExplosion(
+                            powerUp.Center,
+                            powerUp.Velocity / 10);
+                    }
+                }
+            }
+        }
+
         private int hitpoints = 3;
         private void checkShotToAsteroidCollisions()
         {

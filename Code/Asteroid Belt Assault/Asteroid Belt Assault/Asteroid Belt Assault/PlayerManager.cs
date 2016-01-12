@@ -23,6 +23,7 @@ namespace Asteroid_Belt_Assault
         private float minShotTimer = 0.2f;
         private int playerRadius = 15;
         public ShotManager PlayerShotManager;
+        private PowerManager powerManager;
 
         public PlayerManager(
             Texture2D texture,  
