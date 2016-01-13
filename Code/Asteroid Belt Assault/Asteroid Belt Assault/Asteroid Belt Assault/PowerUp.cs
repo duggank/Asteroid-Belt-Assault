@@ -12,19 +12,19 @@ namespace Asteroid_Belt_Assault
         public Sprite PowerSprite;
         private float speed = 120f;
         public bool Consumed = false;
-        public int powerupRadius;
+        public int powerupRadius = 4;
 
         public PowerUp(
             Texture2D texture,
             Vector2 location,
             Rectangle initialFrame,
-            int frameCount)
+            int framecount)
         {
             PowerSprite = new Sprite(
                 location,
                 texture,
                 initialFrame,
-                Vector2.Zero);
+                new Vector2(0, 10));
 
             PowerSprite.CollisionRadius = powerupRadius;
         }
@@ -37,6 +37,12 @@ namespace Asteroid_Belt_Assault
             }
 
             return true;
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            if(IsActive())
+                PowerSprite.Update(gameTime);
         }
 
         public void Draw(SpriteBatch spriteBatch)

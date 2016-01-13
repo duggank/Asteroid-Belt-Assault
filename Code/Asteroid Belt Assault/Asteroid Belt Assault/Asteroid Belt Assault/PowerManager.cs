@@ -15,38 +15,30 @@ namespace Asteroid_Belt_Assault
         public bool consumed = true;
 
         private Texture2D texture;
-        private Rectangle frame;
+        private Rectangle initialFrame;
+        private int frameCount;
 
         public List<PowerUp> Powers = new List<PowerUp>();
         private int Speed = 40;
 
 
         private PlayerManager playerManager;
-        private ShotManager shotManager;
-        private EnemyManager enemyManager;
-        private ExplosionManager explosionManager;
-        private AsteroidManager asteroidManager;
-
-        private String powerName;
         private int Selection;
 
         private Random rand;
 
         public PowerManager(
             Texture2D texture,
-            AsteroidManager asteroidManager,
-            PlayerManager playerManager,
-            EnemyManager enemyManager,
-            ShotManager shotManager,
-            ExplosionManager explosionManager)
+            Rectangle initialFrame, // new Rectangle(0,313,56,54)
+            int frameCount,
+            PlayerManager playerManager)
         {
-            this.asteroidManager = asteroidManager;
             this.playerManager = playerManager;
-            this.enemyManager = enemyManager;
-            this.explosionManager = explosionManager;
-            this.shotManager = shotManager;
             this.texture = texture;
+            this.initialFrame = initialFrame;
+            this.frameCount = frameCount;
 
+            rand = new Random(System.Environment.TickCount);
         }
 
         
@@ -55,34 +47,41 @@ namespace Asteroid_Belt_Assault
             PowerUp newPower = new PowerUp(
                 texture,
                 new Vector2(rand.Next(10, 700), 10),
-                frame,
+                initialFrame,
                 0);
             newPower.PowerSprite.CollisionRadius = 30;
             Powers.Add(newPower);
         }
 
-        private void GivePower()
+        public void GivePower()
         {
-            if(texture.Name == @"Textures\\jaelpowerup.png")
-                Selection = 1;
-
-            if (Selection == 1) //Super fast fire rate.
-            {
-                shotManager.shotSpeed += (.79f * shotManager.shotSpeed);
-                
-            }
+                playerManager.PlayerShotManager.shotSpeed += (.79f * playerManager.PlayerShotManager.shotSpeed);
         }
 
-        private void Start()
+        public void Start()
         {
             if (!playerManager.Destroyed)
             {
-                AddPower();
                 if (consumed == true)
                 {
                     GivePower();
-                    consumed = false;
                 }
+            }
+        }
+
+        public void Update(GameTime gameTime)
+        {
+            for (int x = 0; x < Powers.Count; x++)
+            {
+                Powers[x].Update(gameTime);
+            }
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            foreach (PowerUp power in Powers)
+            {
+                power.Draw(spriteBatch);
             }
         }
 

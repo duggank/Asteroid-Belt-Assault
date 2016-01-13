@@ -43,6 +43,7 @@ namespace Asteroid_Belt_Assault
         private float playerDeathTimer = 0f;
         private float titleScreenTimer = 0f;
         private float titleScreenDelayTime = 1f;
+        private float PowerCoolDown = 30000f;
 
         private int playerStartingLives = 3;
         private Vector2 playerStartLocation = new Vector2(390, 550);
@@ -138,6 +139,12 @@ namespace Asteroid_Belt_Assault
                     this.Window.ClientBounds.Width,
                     this.Window.ClientBounds.Height));
 
+            powerManager = new PowerManager(
+                spriteSheet,
+                new Rectangle(0, 313, 56, 54), 
+                0, 
+                playerManager);
+
             explosionManager = new ExplosionManager(
                 spriteSheet,
                 new Rectangle(0, 100, 50, 50),
@@ -222,9 +229,19 @@ namespace Asteroid_Belt_Assault
                     starField2.Update(gameTime);
                     asteroidManager.Update(gameTime);
                     playerManager.Update(gameTime);
+                    powerManager.Update(gameTime);
                     enemyManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     collisionManager.CheckCollisions();
+                    PowerCoolDown -= (float)gameTime.ElapsedGameTime.Milliseconds;
+
+                    if (PowerCoolDown <= 0)
+                    {
+                        powerManager.AddPower();
+                        PowerCoolDown = 10000f;
+                    }
+
+                    powerManager.Start();
 
                     if (playerManager.Destroyed)
                     {
@@ -252,6 +269,7 @@ namespace Asteroid_Belt_Assault
                     starField2.Update(gameTime);
                     asteroidManager.Update(gameTime);
                     enemyManager.Update(gameTime);
+                    powerManager.Update(gameTime);
                     playerManager.PlayerShotManager.Update(gameTime);
                     explosionManager.Update(gameTime);
 
@@ -270,6 +288,7 @@ namespace Asteroid_Belt_Assault
                     starField2.Update(gameTime);
                     asteroidManager.Update(gameTime);
                     enemyManager.Update(gameTime);
+                    powerManager.Update(gameTime);
                     playerManager.PlayerShotManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     if (playerDeathTimer >= playerDeathDelayTime)
@@ -309,6 +328,7 @@ namespace Asteroid_Belt_Assault
                 starField1.Draw(spriteBatch);
                 starField2.Draw(spriteBatch);
                 asteroidManager.Draw(spriteBatch);
+                powerManager.Draw(spriteBatch);
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);

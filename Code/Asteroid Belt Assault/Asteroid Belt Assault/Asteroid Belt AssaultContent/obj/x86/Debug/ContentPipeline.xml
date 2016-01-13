@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
-      <Time>2016-01-12T10:44:04.1926-05:00</Time>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
+      <Time>2016-01-13T09:51:47.8198-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\TitleScreen.png</Source>
@@ -16,71 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
-      <Time>2016-01-12T10:44:04.2036-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Explosion1.wav</Source>
-      <Name>Sounds\Explosion1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion1.xnb</Output>
-      <Time>2016-01-12T10:44:04.1626-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Explosion2.wav</Source>
-      <Name>Sounds\Explosion2</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion2.xnb</Output>
-      <Time>2016-01-12T10:44:04.1656-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Explosion3.wav</Source>
-      <Name>Sounds\Explosion3</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion3.xnb</Output>
-      <Time>2016-01-12T10:44:04.1686-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Explosion4.wav</Source>
-      <Name>Sounds\Explosion4</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion4.xnb</Output>
-      <Time>2016-01-12T10:44:04.1816-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Shot1.wav</Source>
-      <Name>Sounds\Shot1</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot1.xnb</Output>
-      <Time>2016-01-12T10:44:04.1846-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Sounds\Shot2.wav</Source>
-      <Name>Sounds\Shot2</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot2.xnb</Output>
-      <Time>2016-01-12T10:44:04.1876-05:00</Time>
-    </Item>
-    <Item>
-      <Source>Fonts\Pericles14.spritefont</Source>
-      <Name>Fonts\Pericles14</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Fonts\Pericles14.xnb</Output>
-      <Time>2016-01-12T10:44:04.1586-05:00</Time>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
+      <Time>2016-01-13T08:52:26.7458-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\jaelpowerup.png</Source>
@@ -88,8 +25,71 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\jaelpowerup.xnb</Output>
-      <Time>2016-01-12T10:44:04.2056-05:00</Time>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\jaelpowerup.xnb</Output>
+      <Time>2016-01-13T09:23:21.5098-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Explosion1.wav</Source>
+      <Name>Sounds\Explosion1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion1.xnb</Output>
+      <Time>2016-01-13T08:52:26.6208-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Explosion2.wav</Source>
+      <Name>Sounds\Explosion2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion2.xnb</Output>
+      <Time>2016-01-13T08:52:26.6218-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Explosion3.wav</Source>
+      <Name>Sounds\Explosion3</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion3.xnb</Output>
+      <Time>2016-01-13T08:52:26.6228-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Explosion4.wav</Source>
+      <Name>Sounds\Explosion4</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion4.xnb</Output>
+      <Time>2016-01-13T08:52:26.7148-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Shot1.wav</Source>
+      <Name>Sounds\Shot1</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot1.xnb</Output>
+      <Time>2016-01-13T08:52:26.7158-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Sounds\Shot2.wav</Source>
+      <Name>Sounds\Shot2</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot2.xnb</Output>
+      <Time>2016-01-13T08:52:26.7158-05:00</Time>
+    </Item>
+    <Item>
+      <Source>Fonts\Pericles14.spritefont</Source>
+      <Name>Fonts\Pericles14</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Fonts\Pericles14.xnb</Output>
+      <Time>2016-01-13T08:52:26.6198-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -97,10 +97,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt AssaultContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\eahscs\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
