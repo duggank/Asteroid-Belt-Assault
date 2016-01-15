@@ -18,7 +18,7 @@ namespace Asteroid_Belt_Assault
         private int enemyPointValue = 100;
 
         public CollisionManager(
-            PowerManager powerManager,
+           // PowerManager powerManager,
             AsteroidManager asteroidManager,
             PlayerManager playerManager,
             EnemyManager enemyManager,

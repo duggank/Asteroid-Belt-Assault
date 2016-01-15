@@ -33,7 +33,7 @@ namespace Asteroid_Belt_Assault
         EnemyManager enemyManager;
         ExplosionManager explosionManager;
         ShotManager shotmanager;
-        PowerManager powerManager;
+        //PowerManager powerManager;
 
         CollisionManager collisionManager;
 
@@ -108,7 +108,7 @@ namespace Asteroid_Belt_Assault
                 200,
                 new Vector2(0, 180f),
                 spriteSheet,
-                new Rectangle(0, 450, 2, 2));
+                new Rectangle(0, 450, 2, 8));
 
             asteroidManager = new AsteroidManager(
                 10,
@@ -139,11 +139,11 @@ namespace Asteroid_Belt_Assault
                     this.Window.ClientBounds.Width,
                     this.Window.ClientBounds.Height));
 
-            powerManager = new PowerManager(
-                spriteSheet,
-                new Rectangle(0, 313, 56, 54), 
-                0, 
-                playerManager);
+            //powerManager = new PowerManager(
+          //      spriteSheet,
+           //     new Rectangle(0, 313, 56, 54), 
+          //      0, 
+           //     playerManager);
 
             explosionManager = new ExplosionManager(
                 spriteSheet,
@@ -152,7 +152,7 @@ namespace Asteroid_Belt_Assault
                 new Rectangle(0, 450, 2, 2));
 
             collisionManager = new CollisionManager(
-                powerManager,
+           //     powerManager,
                 asteroidManager,
                 playerManager,
                 enemyManager,
@@ -229,7 +229,7 @@ namespace Asteroid_Belt_Assault
                     starField2.Update(gameTime);
                     asteroidManager.Update(gameTime);
                     playerManager.Update(gameTime);
-                    powerManager.Update(gameTime);
+                 //   powerManager.Update(gameTime);
                     enemyManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     collisionManager.CheckCollisions();
@@ -237,11 +237,11 @@ namespace Asteroid_Belt_Assault
 
                     if (PowerCoolDown <= 0)
                     {
-                        powerManager.AddPower();
+                 //       powerManager.AddPower();
                         PowerCoolDown = 10000f;
                     }
 
-                    powerManager.Start();
+                 //   powerManager.Start();
 
                     if (playerManager.Destroyed)
                     {
@@ -269,7 +269,7 @@ namespace Asteroid_Belt_Assault
                     starField2.Update(gameTime);
                     asteroidManager.Update(gameTime);
                     enemyManager.Update(gameTime);
-                    powerManager.Update(gameTime);
+                 //   powerManager.Update(gameTime);
                     playerManager.PlayerShotManager.Update(gameTime);
                     explosionManager.Update(gameTime);
 
@@ -288,7 +288,7 @@ namespace Asteroid_Belt_Assault
                     starField2.Update(gameTime);
                     asteroidManager.Update(gameTime);
                     enemyManager.Update(gameTime);
-                    powerManager.Update(gameTime);
+                  //  powerManager.Update(gameTime);
                     playerManager.PlayerShotManager.Update(gameTime);
                     explosionManager.Update(gameTime);
                     if (playerDeathTimer >= playerDeathDelayTime)
@@ -328,7 +328,7 @@ namespace Asteroid_Belt_Assault
                 starField1.Draw(spriteBatch);
                 starField2.Draw(spriteBatch);
                 asteroidManager.Draw(spriteBatch);
-                powerManager.Draw(spriteBatch);
+            //    powerManager.Draw(spriteBatch);
                 playerManager.Draw(spriteBatch);
                 enemyManager.Draw(spriteBatch);
                 explosionManager.Draw(spriteBatch);
