@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\SpriteSheet.xnb</Output>
-      <Time>2016-01-15T10:25:42.7428-05:00</Time>
+      <Time>2016-01-29T12:08:13.6864-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\TitleScreen.png</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\TitleScreen.xnb</Output>
-      <Time>2016-01-15T10:25:42.7528-05:00</Time>
+      <Time>2016-01-29T11:36:04.7104-05:00</Time>
     </Item>
     <Item>
       <Source>Textures\jaelpowerup.png</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Textures\jaelpowerup.xnb</Output>
-      <Time>2016-01-15T10:25:42.7548-05:00</Time>
+      <Time>2016-01-29T11:36:04.7134-05:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Explosion1.wav</Source>
@@ -35,7 +35,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion1.xnb</Output>
-      <Time>2016-01-15T10:25:42.7188-05:00</Time>
+      <Time>2016-01-29T11:36:04.6724-05:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Explosion2.wav</Source>
@@ -44,7 +44,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion2.xnb</Output>
-      <Time>2016-01-15T10:25:42.7208-05:00</Time>
+      <Time>2016-01-29T11:36:04.6784-05:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Explosion3.wav</Source>
@@ -53,7 +53,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion3.xnb</Output>
-      <Time>2016-01-15T10:25:42.7258-05:00</Time>
+      <Time>2016-01-29T11:36:04.6814-05:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Explosion4.wav</Source>
@@ -62,7 +62,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Explosion4.xnb</Output>
-      <Time>2016-01-15T10:25:42.7338-05:00</Time>
+      <Time>2016-01-29T11:36:04.6844-05:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Shot1.wav</Source>
@@ -71,7 +71,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot1.xnb</Output>
-      <Time>2016-01-15T10:25:42.7358-05:00</Time>
+      <Time>2016-01-29T11:36:04.6874-05:00</Time>
     </Item>
     <Item>
       <Source>Sounds\Shot2.wav</Source>
@@ -80,7 +80,7 @@
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Sounds\Shot2.xnb</Output>
-      <Time>2016-01-15T10:25:42.7388-05:00</Time>
+      <Time>2016-01-29T11:36:04.6904-05:00</Time>
     </Item>
     <Item>
       <Source>Fonts\Pericles14.spritefont</Source>
@@ -89,7 +89,7 @@
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\EASHCS\Documents\GitHub\Asteroid-Belt-Assault\Code\Asteroid Belt Assault\Asteroid Belt Assault\Asteroid Belt Assault\bin\x86\Debug\Content\Fonts\Pericles14.xnb</Output>
-      <Time>2016-01-15T10:25:42.7148-05:00</Time>
+      <Time>2016-01-29T11:36:04.6674-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
